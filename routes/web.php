@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ZipController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::resource('zips', App\Http\Controllers\ZipController::class);
+
+Route::get('zips/dod', App\Http\Controllers\ZipController::class);
+Route::get('test/{slug}', 
