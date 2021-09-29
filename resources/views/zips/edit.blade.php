@@ -1,8 +1,21 @@
 @extends('layouts.main')
 @section('title', '編集画面')
 @section('content')
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    @if ($errors->any())
+        <div class="error">
+            <p>
+                <b>{{ count($errors) }}件のエラーがあります。</b>
+            </p>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <h1>編集画面</h1>
-        <form action="{{ route('zips.update', $zip)}}" method="POST">
+    <form action="{{ route('zips.update', $zip) }}" method="POST">
         @csrf
         @method('PATCH')
         <div>
@@ -30,12 +43,5 @@
         </div>
     </form>
     <button type="button" onclick="location.href='{{ route('zips.show', $zip) }}'">戻る</button>
-{{-- <button type="button" onclick="location.href='{{ route('zips.show') }}'" class="btn btn-outline-danger">一覧に戻る</button> --}}
-    {{-- <a href="{{ route('shops.index') }}">一覧画面</a>
-    <a href="{{ route('shops.edit', $shop) }}">編集</a> --}}
-    {{-- <form action="{{ route('shops.destroy', $shop) }}" method="post" name="form1" style="display: inline">
-        @csrf
-        @method('delete')
-        <button type="submit" onclick="if(!confirm('削除していいですか?')){return false}">削除する</button>
-    </form> --}}
+
 @endsection

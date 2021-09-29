@@ -1,29 +1,42 @@
 @extends('layouts.main')
 @section('title', '新規登録画面')
 @section('content')
+<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    @if ($errors->any())
+        <div class="error">
+            <p>
+                <b>{{ count($errors) }}件のエラーがあります。</b>
+            </p>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <h1>新規登録画面</h1>
-        <form action="{{ route('zips.store', $zip)}}" method="POST">
+    <form action="{{ route('zips.store', $zip) }}" method="POST">
         @csrf
         @method('POST')
         <div>
             <label for="name">名前</label>
-            <input type="text" name="name" id="name" value="{{ $zip->name }}">
+            <input type="text" name="name" id="name" value="{{ old('name') }}">
         </div>
         <div>
             <label for="email">メールアドレス</label>
-            <input type="text" name="email" id="email" >
+            <input type="text" name="email" id="email" value="{{ old('email') }}">
         </div>
         <div>
             <label for="postcode">郵便番号</label>
-            <input type="text" name="postcode" id="postcode" >
+            <input type="text" name="postcode" id="postcode" required value="{{ old('postcode', $postcode) }}">
         </div>
         <div>
             <label for="address">住所</label>
-            <textarea name="address" id="address"></textarea>
+            <textarea name="address" id="address">{{ $address }}</textarea>
         </div>
         <div>
             <label for="phoneNumber">電話番号</label>
-            <input type="text" name="phoneNumber" id="phoneNumber" >
+            <input type="text" name="phoneNumber" id="phoneNumber" value="{{ old('phoneNumber') }}">
         </div>
         <div>
             <input type="submit" value="登録">

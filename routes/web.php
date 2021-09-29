@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('zips/dod', [App\Http\Controllers\ZipController::class,'form'])->name('zips.form');
+
 Route::resource('zips', App\Http\Controllers\ZipController::class);
 
-Route::get('zips/dod', App\Http\Controllers\ZipController::class);
-Route::get('test/{slug}', 
