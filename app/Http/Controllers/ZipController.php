@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Zip;
-
 use GuzzleHttp\Client;
+use Illuminate\Http\Request;
 use App\Http\Requests\ZipRequest;
 
 class ZipController extends Controller
@@ -102,7 +102,7 @@ class ZipController extends Controller
         return redirect()->route('zips.index');
     }
 
-    public function form(ZipRequest $request ,Zip $zip)
+    public function form(Request $request ,Zip $zip)
     {
         $method = 'GET';
         // create画面で入力した値をzipcodeに反映

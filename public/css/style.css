@@ -1,11 +1,11 @@
 @charset "utf-8";
 
-    /* label {
-        display: block;
-    } */
 .button-group {
-    display: flex;
-}
+        float: left;
+    }
+/* .button-group {
+    display: flex; 
+}  */
 .button-group button {
     margin-right: 10px;
 }

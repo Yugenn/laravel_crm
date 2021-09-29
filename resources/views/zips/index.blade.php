@@ -24,6 +24,7 @@
                 <td>{{ $zip->phoneNumber }}</td>
             </tr>
         @endforeach
+    </table>
         <button type="button" onclick="location.href='{{ route('zips.create') }}'">新規作成</button>
 
 
