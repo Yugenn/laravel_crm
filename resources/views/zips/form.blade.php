@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('title', '新規登録画面')
 @section('content')
-<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     @if ($errors->any())
         <div class="error">
             <p>
@@ -24,7 +24,7 @@
         </div>
         <div>
             <label for="email">メールアドレス</label>
-            <input type="text" name="email" id="email" value="{{ old('email') }}">
+            <input type="email" name="email" id="email" value="{{ old('email') }}">
         </div>
         <div>
             <label for="postcode">郵便番号</label>
@@ -35,8 +35,8 @@
             <textarea name="address" id="address">{{ $address }}</textarea>
         </div>
         <div>
-            <label for="phoneNumber">電話番号</label>
-            <input type="text" name="phoneNumber" id="phoneNumber" value="{{ old('phoneNumber') }}">
+            <label for="phone_number">電話番号</label>
+            <input type="text" name="phone_number" id="phone_number" value="{{ old('phone_number') }}">
         </div>
         <div>
             <input type="submit" value="登録">

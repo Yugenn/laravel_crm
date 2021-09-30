@@ -20,23 +20,23 @@
         @method('PATCH')
         <div>
             <label for="name">名前</label>
-            <input type="text" name="name" id="name" value="{{ $zip->name }}">
+            <input type="text" name="name" id="name" value="{{ old('name', $zip->name) }}">
         </div>
         <div>
             <label for="email">メールアドレス</label>
-            <input type="text" name="email" id="email" value="{{ $zip->email }}">
+            <input type="email" name="email" id="email" value="{{ old('email', $zip->email) }}">
         </div>
         <div>
             <label for="postcode">郵便番号</label>
-            <input type="text" name="postcode" id="postcode" value="{{ $zip->postcode }}">
+            <input type="text" name="postcode" id="postcode" value="{{ old('postcode', $zip->postcode) }}">
         </div>
         <div>
             <label for="address">住所</label>
-            <textarea name="address" id="address">{{ $zip->address }}</textarea>
+            <textarea name="address" id="address">{{ old('address', $zip->address) }}</textarea>
         </div>
         <div>
-            <label for="phoneNumber">電話番号</label>
-            <input type="text" name="phoneNumber" id="phoneNumber" value="{{ $zip->phoneNumber }}">
+            <label for="phone_number">電話番号</label>
+            <input type="text" name="phone_number" id="phone_number" value="{{ old('phone_number', $zip->phone_number) }}">
         </div>
         <div>
             <input type="submit" value="更新">

@@ -25,7 +25,7 @@
             </tr>
         @endforeach
     </table>
-        <button type="button" onclick="location.href='{{ route('zips.create') }}'">新規作成</button>
+    <button type="button" onclick="location.href='{{ route('zips.create') }}'">新規作成</button>
 
 
-    @endsection
+@endsection

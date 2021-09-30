@@ -38,7 +38,7 @@ class ZipController extends Controller
      */
     public function store(ZipRequest $request)
     {
-                $zip = new Zip();
+        $zip = new Zip();
 
         $zip->name = $request->name;
         $zip->email = $request->email;
@@ -102,7 +102,7 @@ class ZipController extends Controller
         return redirect()->route('zips.index');
     }
 
-    public function form(Request $request ,Zip $zip)
+    public function form(Request $request, Zip $zip)
     {
         $method = 'GET';
         // create画面で入力した値をzipcodeに反映
@@ -125,10 +125,6 @@ class ZipController extends Controller
             // フラッシュメッセージ
             return back()->withErrors(['error' => '郵便番号が正しくありません！']);
         }
-        return view('zips.form')->with(compact('zip', 'address','postcode'));
+        return view('zips.form')->with(compact('zip', 'address', 'postcode'));
     }
-
-
 }
-
-    

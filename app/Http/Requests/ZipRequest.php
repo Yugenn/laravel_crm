@@ -28,7 +28,7 @@ class ZipRequest extends FormRequest
         return [
             'name' => 'required|string|max:50',
             'email' => 'required|email:rfc,dns',
-            'postcode' => 'required|integer|',
+            'postcode' => 'required|integer|min:7|max:7',
             'address' => 'required|string|min:1',
             'phoneNumber' => 'required|string|max:20',
         ];
