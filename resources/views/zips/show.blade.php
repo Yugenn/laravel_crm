@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('title', '顧客詳細画面')
 @section('content')
-<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
     <h1>顧客詳細画面</h1>
     <table border="1">
         <tr>

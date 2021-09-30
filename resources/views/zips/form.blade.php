@@ -1,7 +1,6 @@
 @extends('layouts.main')
 @section('title', '新規登録画面')
 @section('content')
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     @if ($errors->any())
         <div class="error">
             <p>
